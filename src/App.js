@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import PrivateStudy from "./routes/PrivateStudy";
+import { BrowserRouter } from "react-router-dom";
 import { Login } from "./routes/Login";
 import { Register } from "./routes/Register";
-import styles from "./App.css";
+import "./App.css";
 
 function App() {
   const [currentForm, setCurrentForm] = useState("login");
@@ -11,7 +11,7 @@ function App() {
   };
   return (
     <div className="App">
-      {currentForm == "login" ? (
+      {currentForm === "login" ? (
         <Login onFormSwitch={toggleForm} />
       ) : (
         <Register onFormSwitch={toggleForm} />
